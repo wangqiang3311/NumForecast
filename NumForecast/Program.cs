@@ -29,7 +29,64 @@ namespace NumForecast
                 if (numbs.Count == 3)
                 {
                     var diagrams = ComputerEightDiagrams(numbs);
-                    Console.WriteLine("你所算的卦：" + MakeDia(diagrams) + "(" + string.Join(",", diagrams)+")");
+                    Console.WriteLine("你所算的卦：" + MakeDia(diagrams) + "(" + string.Join(",", diagrams) + ")");
+
+                    //打印卦象
+                    Print(diagrams);
+                }
+            }
+        }
+
+        private static void Print(List<int> diagrams)
+        {
+            //存储
+            string[] keys = { "111", "011", "101", "001", "110", "010", "100", "000" };
+
+            var up = diagrams[1];
+            var down = diagrams[0];
+
+            var upStr = keys[up - 1];
+            var downStr = keys[down - 1];
+
+            n = 0;
+            PrintYao(upStr.ToCharArray(), diagrams[2]);
+            PrintYao(downStr.ToCharArray(), diagrams[2]);
+
+            Console.ResetColor();
+        }
+
+        private static int n = 0;
+        private static void PrintYao(char[] chars, int yao)
+        {
+            bool isYao=false;
+
+            foreach (var item in chars)
+            {
+                n++;
+
+                Console.WriteLine("");
+
+                isYao = n == 6 - yao + 1;
+
+                if (item == '1')
+                {
+                    Console.BackgroundColor =isYao? ConsoleColor.Yellow:ConsoleColor.Blue;
+                    Console.WriteLine("            ");
+                }
+                else if (item == '0')
+                {
+                    Console.BackgroundColor = isYao ? ConsoleColor.Yellow : ConsoleColor.DarkRed;
+                    
+                    var color = Console.BackgroundColor;
+
+                    Console.Write("     ");
+
+                    Console.ResetColor();
+                    Console.Write("  ");
+
+                    Console.BackgroundColor = color;
+                    Console.Write("     ");
+                    Console.Write("\r\n");
                 }
             }
         }
