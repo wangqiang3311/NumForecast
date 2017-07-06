@@ -1,0 +1,6 @@
+D:\mywork\ConsoleApplication1\NumForecast\bin\Debug\NumForecast.exe.config
+D:\mywork\ConsoleApplication1\NumForecast\bin\Debug\NumForecast.exe
+D:\mywork\ConsoleApplication1\NumForecast\bin\Debug\NumForecast.pdb
+D:\mywork\ConsoleApplication1\NumForecast\obj\Debug\NumForecast.csprojResolveAssemblyReference.cache
+D:\mywork\ConsoleApplication1\NumForecast\obj\Debug\NumForecast.exe
+D:\mywork\ConsoleApplication1\NumForecast\obj\Debug\NumForecast.pdb
